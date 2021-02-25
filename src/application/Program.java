@@ -16,10 +16,15 @@ public class Program {
 		myShapes.add(new Rectangle(3.0, 2.0));
 		myShapes.add(new Circle(2.0));
 		
-		System.out.println("Total areas: " + totalArea(myShapes));
+		List<Circle> myCircles = new ArrayList<Circle>();
+		myCircles.add(new Circle(3.0));
+		myCircles.add(new Circle(4.0));
+		
+		
+		System.out.println("Total areas: " + totalArea(myCircles));
 	}
 	
-	public static double totalArea(List<Shape> list) {
+	public static double totalArea(List<? extends Shape> list) {
 		double sum = 0.0;
 		for(Shape s : list) {
 			sum += s.area();
